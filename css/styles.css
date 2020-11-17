@@ -151,7 +151,7 @@
     text-align: center;
 }
 .row3 .categories .category{
-    padding-bottom: 5%;
+    padding-bottom: 1%;
     margin-top: 5%;
 }
 .row4{
@@ -159,13 +159,18 @@
     padding-right: 5.125rem;
     
 }
+.row4 p{
+    font-size: 1.36rem;
+    color: #727582;
+    margin-top: 1rem;
+}
 .row4 h1{
     color: #233AA9;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-size: 3.125rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding-left: 4.8125rem;
     padding-right: 5.125rem;
    
