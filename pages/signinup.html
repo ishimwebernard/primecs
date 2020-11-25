@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signinup.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="../js/signinup.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap" rel="stylesheet"> 
+    <title>PrimeEcs</title>
+</head>
+<body>
+    <div class="content">
+        <div class="menu" id="menu">
+          <div class="col1">
+            <p class="navigationitem">Home</p>
+            <p class="navigationitem">Services</p>
+            <p class="navigationitem">Carreers</p>
+            <p class="navigationitem">About</p>
+            <p class="navigationitem">Contact</p>
+          </div>
+          <div class="col2" onclick="showHideHamburger()"> </div>
+        </div>
+        <div class="row1">
+            <div class="hamburger" onclick="showHideHamburger()">
+                <div class="line"> </div>
+                <div class="line"> </div>
+                <div class="line"> </div>
+            </div>
+            <img src="/assets/images/logo.png" class="logo">
+            <div class="navigationitems">
+                <p class="navigationitem">Home</p>
+                <p class="navigationitem">Services</p>
+                <p class="navigationitem">Carreers</p>
+                <p class="navigationitem">About</p>
+                <p class="navigationitem">Contact</p>
+            </div>
+            <div class="rightitems">
+                <p class="information">+1 (913) 123 456</p>
+                <p class="information">info@myprimecs.com</p>
+                <div class="buttongroup">
+                    <div class="button">
+                        <p class="subscribetext">SUBSCRIBE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="r">>
+        <div class="pagenavigator">
+            <div class="lander" id="tup" onclick="switchTabTo(`signup`, this)"><p>SIGN UP</p></div>
+            <div class="lander" id="tin" onclick="switchTabTo(`signin`, this)"><p>SIGN IN</p></div>
+        </div>
+        <div class="realcontainer">
+            <div id="signup" class="tab">
+                <h2>Create your account</h2>
+                <p>Build Skills for every time, create bla bla bla</p>
+                <div class="buttongroup">
+                    <div class="button">
+                        <div class="image" role="image"></div>
+                        <p class="textdesc">Sign up with google</p>
+                    </div>
+                    <div class="button">
+                        <div class="image" role="image"></div>
+                        <p class="textdesc">Sign up with facebook</p>
+                    </div>
+                </div>
+                <form action="" method="POST">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Second Name">
+                    <input type="text" placeholder="Email address">
+                    <input type="text" placeholder="Password">
+                    <input type="text" placeholder="Repeat Password">
+                    <p class="policy">By clicking this button, you agree with primecs policy</p>
+                    <button>SIGN UP</button>
+                </form>
+            </div>
+            <div id="signin" class="tab">
+                <h2>Sign into your account</h2>
+                <p>Build Skills for every time, create bla bla bla</p>
+                <div class="buttongroup">
+                    <div class="button">
+                        <div class="image" role="image"></div>
+                        <p class="textdesc">Sign in with google</p>
+                    </div>
+                    <div class="button">
+                        <div class="image" role="image"></div>
+                        <p class="textdesc">Sign in with facebook</p>
+                    </div>
+                </div>
+                <form action="" method="POST">
+                    <input type="text" placeholder="Email address">
+                    <input type="text" placeholder="Password">
+                    <p>By clicking this button, you agree with primecs policy</p>
+                    <button>SIGN IN</button>
+                </form>
+            </div>
+            
+        </div>
+        </div>
+      
+    
+</body>
+</html>

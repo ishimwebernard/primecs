@@ -1,0 +1,277 @@
+*{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    font-family: Montserrat;
+    overflow-x: hidden;
+}
+#menu{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-template-columns: 3fr 1fr;
+   
+}
+@keyframes g{
+    from{width: 0%;}
+    to{width: 100%;}
+}
+#menu .col1 p{
+    font-size: 2rem;
+    margin-top: .1rem;
+    color: #727582;
+    animation-name: g;
+    animation-duration: 1s;
+}
+
+#menu .col1{
+    background: #fff;
+    text-align: center;
+}
+#menu .col2{
+    background: #000;
+    opacity: 50%;;
+}
+.content .row1{
+    opacity: 97.5%;
+    background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  box-shadow:  -30px -30px 60px #B2B9BA;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: 4.8125rem;
+  padding-right: 5.125rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.content .row1 .navigationitems{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.content .row1 .navigationitems p{
+    margin-left: 2rem;
+    color: #B2B9BA;
+    cursor: pointer;
+}
+.content .row1 .rightitems .buttongroup{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 5%;
+} 
+.content .row1 .rightitems .buttongroup .button:last-child{
+    margin-left: 10%;
+}
+.content .row1 .rightitems .buttongroup .button{
+    text-align: center;
+    background: linear-gradient(180deg,#2741bc ,#233AA9);
+    color: #fff;
+    padding: .4rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.content .row1 .rightitems .buttongroup .button:last-child{
+    color: #233AA9;
+    background: #fff;
+    border: 0.125rem #233AA9 solid;
+}
+.content .row1 .rightitems .information{
+    color: #233AA9;
+}
+.row1 .hamburger{
+    display: none;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+    
+}
+.row1 .hamburger .line{
+    height: 5px;
+    width: 2.375rem;
+    background-color: #233AA9;
+    margin-top: 2px;
+}
+
+.pagenavigator{
+    margin-top: 9.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 1px #727582 solid;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(180deg, #fff, #F6F6F6);
+}
+.pagenavigator .lander{
+    padding: .5rem;
+    background: linear-gradient(180deg, #fff, #F6F6F6);
+}
+.pagenavigator .lander:last-child{
+    border-left:1px #000 solid;
+}
+.realcontainer{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.realcontainer #signup{
+    text-align: center;
+}
+.realcontainer #signup .buttongroup{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.realcontainer #signup .buttongroup .button{
+    margin-top: .5rem;
+}
+
+.realcontainer #signup form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.realcontainer #signup form input{
+    margin-top: .5rem;
+    padding: .25rem;
+}
+.realcontainer #signup form button{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.realcontainer #signup form p{
+    margin-top: 1rem;
+}
+.realcontainer h2{
+    font-size: 2rem;
+    color: #233AA9;
+}
+.realcontainer p{
+    color: #727582;
+}
+
+
+
+/**/
+
+.realcontainer #signin{
+    text-align: center;
+    display: none;
+}
+.realcontainer #signin .buttongroup{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+.realcontainer #signin form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.realcontainer #signin form input{
+    margin-top: .5rem;
+    padding: .25rem;
+}
+.realcontainer #signin form button{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.realcontainer #signin form p{
+    margin-top: 1rem;
+}
+
+
+/*/
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 352px){
+    *{
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+ 
+    .content .row1{
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+    }
+    .content .row1 img{
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    .content .row1 .navigationitems{
+        display: none;
+    }
+    .content .row1 .rightitems{
+        display: none;
+    }
+    .row1 .hamburger{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
+@media only screen and (min-width: 353px) and (max-width: 1228px){
+    *{
+        font-size: 15px;
+        overflow-x: hidden;
+
+    }
+    .content .row1{
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+    }
+    .content .row1 img{
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    .content .row1 .navigationitems{
+        display: none;
+    }
+    .content .row1 .rightitems{
+        display: none;
+    }
+    .row1 .hamburger{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+
+}
+@media only screen and (min-width: 1227px){
+
+}
+
