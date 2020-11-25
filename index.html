@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="/js/landingpage.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap" rel="stylesheet"> 
     <title>PrimeEcs</title>
 </head>
 <body>
-    <script>
-        var s = "I am a new Man";
-        console.log(s.split(''));
-    </script>
     <div class="content">
+        <div class="menu" id="menu">
+          <div class="col1">
+            <p class="navigationitem">Home</p>
+            <p class="navigationitem">Services</p>
+            <p class="navigationitem">Carreers</p>
+            <p class="navigationitem">About</p>
+            <p class="navigationitem">Contact</p>
+          </div>
+          <div class="col2" onclick="showHideHamburger()"> </div>
+        </div>
         <div class="row1">
+            <div class="hamburger" onclick="showHideHamburger()">
+                <div class="line"> </div>
+                <div class="line"> </div>
+                <div class="line"> </div>
+            </div>
             <img src="/assets/images/logo.png" class="logo">
             <div class="navigationitems">
                 <p class="navigationitem">Home</p>
