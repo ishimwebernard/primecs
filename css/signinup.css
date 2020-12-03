@@ -218,7 +218,7 @@
 
 
 
-.realcontainer #signup form{
+.realcontainer #signup .form{
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -226,16 +226,16 @@
     margin-right: auto;
     margin-top: 1rem;
 }
-.realcontainer #signup form input{
+.realcontainer #signup .form input{
     margin-top: .5rem;
     padding: .25rem;
 }
-.realcontainer #signup form button{
+.realcontainer #signup .form button{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
-.realcontainer #signup form p{
+.realcontainer #signup .form p{
     margin-top: 1rem;
 }
 .realcontainer h2{
@@ -260,23 +260,23 @@
     margin-left: auto;
     margin-right: auto;
 }
-.realcontainer #signin form{
+.realcontainer #signin .form{
     display: flex;
     flex-direction: column;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
-.realcontainer #signin form input{
+.realcontainer #signin .form input{
     margin-top: .5rem;
     padding: .25rem;
 }
-.realcontainer #signin form button{
+.realcontainer #signin .form button{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
-.realcontainer #signin form p{
+.realcontainer #signin .form p{
     margin-top: 1rem;
 }
 #facebook{
