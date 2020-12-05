@@ -11,7 +11,14 @@
 </head>
 <body>
     <div class="content">
+        <div class="loader" id="loader">
+            <div class="lc">
+                <img src="../assets/images/loading.gif" alt="">
+            <h2>Loading ...</h2>
+            </div>
+        </div>
         <div class="menu" id="menu">
+            
           <div class="col1">
             <p class="navigationitem">Home</p>
             <p class="navigationitem">Services</p>
@@ -132,13 +139,14 @@
     if(firstPassword.value != secondPassword.value){
         alert('Passwords Dont match');
     }else{
-        console.log(`Staring the writting`);
+        
             firebase.auth().createUserWithEmailAndPassword(String(email.value), String(firstPassword.value))
             .then((user) => {
                 console.log(`Starting creation of a document`);
                return db.collection('users').doc(user.user.uid).set({
                    firstName: String(firstName.value),
-                   secondName: String(secondName.value)
+                   secondName: String(secondName.value),
+                   courses: ""
                })
               
   })
@@ -155,9 +163,13 @@
     function login(){
         var signPassword = document.getElementById('signPassword');
         var signEmail = document.getElementById('signEmail');
+        document.getElementById("loader").style.display = "block";
 	firebase.auth().signInWithEmailAndPassword(signEmail.value, signPassword.value)
   .then((user) => {
-    alert(`Succesfull Signed In`);
+    document.cookie = `nick=${user.user.uid}`;
+    location.href="lessons.html";
+    document.getElementById("loader").style.display = "block";
+
   })
   .catch((error) => {
     var errorCode = error.code;
