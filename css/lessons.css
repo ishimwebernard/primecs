@@ -88,10 +88,90 @@ body{
     cursor: pointer;
 
 }
+#enrollmentCLASSES{
+    overflow-y: scroll;
+}
 
 .col2{
     overflow-y: scroll;
     height: 665px;
+    animation-name: col2Animation;
+    animation-duration: .777777777777777777s;
+}
+.accountcontrol{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 80%;
+    display: none;
+}
+.center{
+    position: absolute;
+    opacity: 100%;
+    background: #fff;
+    align-self: center;
+    width: 60%;
+    margin-left: 20%;
+    height: 50%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    display: none;
+}
+.center img{
+    background-color: #000;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.center button{
+    width: 30%;
+    align-self: center;
+}
+.center small{
+    color: #727582;
+    margin-top: 1rem;
+}
+.center input{
+    width: 100%;
+    height: auto;
+}
+.center label {
+    color: white;
+    cursor: pointer;
+    background-color: #233AA9;
+    width: 30%;
+    align-self: center;
+    text-align: center;
+    padding: 2px;
+    font-weight: 700;
+    margin-top: .5rem;
+  }
+  
+
+.center .enrollmentClass{
+    background-color: #f2f2f2;
+    padding: .5rem;
+    border-right: #DDDDDD;
+    cursor: pointer;
+}
+.center .enrollmentClass:hover{
+    background: #cacaca;
+}
+.center .enrollmentClass p{
+    font-weight: 500;
+}
+
+
+@keyframes col2Animation{
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
 .col2 .row1{
     background: #000;
@@ -100,12 +180,24 @@ body{
 height: 5rem;
 width: 100%;
 text-align: left;
+display: flex;
+flex-direction: row;
+}
+.col2 .row1 img{
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 .col2 .row1 h1{
     font-size: 2rem;
     width: auto;
     height: auto;
     color: #102ACD;
+    margin-top: .5rem;
 }
 
 .col2 .row2{

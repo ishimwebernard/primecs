@@ -10,6 +10,16 @@
 </head>
 <body>
     <div class="content">
+        <div class="accountcontrol" id="accountcontrol" onclick="endAccountControlSession()">
+        </div>
+        <div class="center" id="center">
+            <img src="" alt="" id="userProfile">
+            <input type="file" accept="image/png, image/jpeg" id="choosefile" hidden>
+            <label for="choosefile" id="pictureChanger">CHANGE PROFILE PICTURE</label>
+            <small>ENROLLED PROGRAMS</small>
+            <div class="enrollmentCLASSES" id="enrollmentCLASSES">
+            </div>
+          </div>
         <div class="loader" id="loader">
             <div class="lc">
                 <img src="../assets/images/loading.gif" alt="">
@@ -30,12 +40,17 @@
                 <img src="../assets/images/out.png" alt="">
                 <h2 onclick="logout()">Logout</h2>
             </div>
+            <div class="out" onclick="startAccountControlSession()">
+                <img src="../assets/images/account.png" alt="">
+                <h2>Account</h2>
+            </div>
 
 
         </div>
         <div class="mainNavigator">
             <div class="col2" id="home">
                 <div class="row1">
+                    <img src="" alt="" id="userprofilepicture" onclick="startAccountControlSession()">
                     <h1>Home</h1>
 
                 </div>
@@ -133,7 +148,34 @@
         var userId;
         var courserBeingTaken;
         var globalUserId;
+        var choosefile = document.getElementById("choosefile").onchange = function(){
+            var storageRef = firebase.storage().ref();
+            var userStorageRef = storageRef.child(String(userId));
+
+            const selectedFile = document.getElementById('choosefile').files[0];
+            document.getElementById("loader").style.display = "block";
+            userStorageRef.put(selectedFile).then(function(snapshot) {
+                endAccountControlSession();
+                
+                const fileDirectory = snapshot.ref.getDownloadURL().then(url=>{
+                    console.log(url);
+                    populateUserImages();
+                    document.getElementById("loader").style.display = "none";
+                }).catch(error=>{
+                    alert(error);
+                    console.log(error);
+                })
+            }).catch(error=>{
+                alert(String(error));
+                console.log(error);
+            });
+
+        };
+
+
+        switchTabFor(0);
         loadUserClasses();
+        populateUserImages();
 
         function loadUserClasses() {
             var enrolledPrograms = document.getElementById("enrolledPrograms");
@@ -159,9 +201,10 @@
             } else {
                 globalUserId = userId;
                 try {
-                    db.collection('users').doc(cookies.nick).get().then((data) => {
-                        console.log(data.data());
-                        courserBeingTaken = data.data().courses.split(` `);
+                    document.getElementById("loader").style.display = "block";
+                    db.collection('users').doc(userId).get().then((data) => {
+                        document.getElementById("loader").style.display = "none";
+                        courserBeingTaken = data.data().courses.trim().split(` `);
                         console.log(courserBeingTaken);
 
                         if ((courserBeingTaken.length !== 0)) {
@@ -173,9 +216,15 @@
                                 <h3>${course}</h3>
                                 <p>${fetchContent(String(course))}</p>
                                 <button onclick="createCookie(${uidLength})">Continue</button>
-                                <button onclick="createCookie(${uidLength})">Exit Course</button>
+                                <button onclick="exitClass('${course}')">Exit Course</button>
                                 </div>
                                 `;
+                                document.getElementById("enrollmentCLASSES").innerHTML+=`
+
+                                <div class="enrollmentClass">
+                                <p>${course}</p>
+                                </div>
+                                `
                                 }
 
                             }
@@ -186,10 +235,11 @@
                         }
 
                     }).catch(err => {
-                        console.log(err);
+                        alert(err+"Line 239");
                     })
                 } catch (err) {
-
+                    alert(err);
+                    console.log(err);
                 }
             }
             document.cookie = "_hush="+userId;
@@ -220,11 +270,13 @@
                     courses: stringCourse
                 }).then(() => {
                     document.getElementById("loader").style.display = "none";
+                    document.cookie = "nick="+userId;    
+            location.href = `lessons.html`;
                 });
             } else {
                 alert(`Already Enrolled`);
             }
-            loadUserClassesWithParam(userId); 
+            //loadUserClassesWithParam(userId); 
         }
 
         function fetchContent(subject) {
@@ -254,8 +306,8 @@
                                 <div class="rectangle">
                                 <h3>${course}</h3>
                                 <p>${fetchContent(String(course))}</p>
-                                <button>Continue</button>
-                                <button>Exit Course</button>
+                                <button onclick="createCookie(${uidLength})">Continue</button>
+                                <button onclick="exitClass('${course}')">Exit Course</button>
                                 </div>
                                 `;
                             }
@@ -265,6 +317,7 @@
                         document.getElementById("nothing").style.display = "none";
                     }
                 }).catch(err => {
+                    alert(err);
                     console.log(err);
                 })
             } catch (err) {
@@ -292,6 +345,59 @@
 
             })
         }
+
+        function startAccountControlSession(){
+            var parent = document.getElementById("accountcontrol");
+            var child = document.getElementById("center");
+
+            parent.style.display = "block";
+            child.style.display = "flex";
+
+        }
+        function endAccountControlSession(){
+            var parent = document.getElementById("accountcontrol");
+            var child = document.getElementById("center");
+
+            parent.style.display = "none";
+            child.style.display = "none";
+
+        }
+        function populateUserImages(){
+            firebase.storage().ref().child(String(userId)).getDownloadURL().then((url)=>{
+                document.getElementById("userprofilepicture").style.backgroundImage = `url(${url})`;
+                document.getElementById("userProfile").style.backgroundImage = `url(${url})`;
+            }).catch(error=>{
+
+            })
+        }
+
+
+        function exitClass(newClass) {
+            var stringCourse = "";
+            console.log(stringCourse);
+            for( var i = 0; i < courserBeingTaken.length; i++){ 
+                    if ( courserBeingTaken[i] === String(newClass)) { 
+                        courserBeingTaken.splice(i, 1); 
+                    }
+            }
+            
+            for (let course of courserBeingTaken) {
+                stringCourse += course + " ";
+            }
+            document.getElementById("loader").style.display = "block";
+            db.collection('users').doc(userId).set({
+            courses: stringCourse
+            }).then(() => {
+            document.getElementById("loader").style.display = "none";
+            document.cookie = "nick="+userId;    
+            location.href = `lessons.html`;
+            });
+            
+        }
+
+
+
+
          </script>
 </body>
 </html>
