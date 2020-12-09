@@ -250,3 +250,21 @@ margin-right: 2.53267973856209%;
     flex-direction: column;
 }
 
+.col2 .row2 h1{
+    color: #8FE423;
+    font-size: 1.5rem;
+
+}
+.col2 .row2 h2{
+    margin-top: 5%;
+    color: #233AA9;
+}
+.col2 .row2 p{
+    margin-top: 1.5%;
+    color: #686868;
+}
+.col2 .row2 .img{
+    height: 25rem;
+    width: 60%;
+    margin-top: 2rem;   
+}
