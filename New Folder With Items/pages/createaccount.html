@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/createaccount.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap" rel="stylesheet"> 
+    <title>PrimeEcs</title>
+</head>
+<body>
+    <div class="content">
+        <div class="loader" id="loader">
+            <div class="lc">
+                <img src="../assets/images/loading.gif" alt="">
+            <h2>Loading ...</h2>
+            </div>
+        </div>
+        <div class="menu" id="menu">
+            
+          <div class="col1">
+            <p class="navigationitem">Home</p>
+            <p class="navigationitem">Services</p>
+            <p class="navigationitem">Carreers</p>
+            <p class="navigationitem">About</p>
+            <p class="navigationitem">Contact</p>
+          </div>
+          <div class="col2" onclick="showHideHamburger()"> </div>
+        </div>
+        <div class="row1">
+            <div class="hamburger" onclick="showHideHamburger()">
+                <div class="line"> </div>
+                <div class="line"> </div>
+                <div class="line"> </div>
+            </div>
+            <img src="/assets/images/logo.png" class="logo">
+            <div class="navigationitems">
+                <p class="navigationitem">Home</p>
+                <p class="navigationitem">Services</p>
+                <p class="navigationitem">Carreers</p>
+                <p class="navigationitem">About</p>
+                <p class="navigationitem">Contact</p>
+            </div>
+            <div class="rightitems">
+                <p class="information">+1 (913) 123 456</p>
+                <p class="information">info@myprimecs.com</p>
+                <div class="buttongroup">
+                    <div class="button">
+                        <p class="subscribetext">SUBSCRIBE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="r">>
+
+        <div class="realcontainer">
+        
+            <div id="signin" class="tab">
+                <h2>Create account</h2>
+                <p>Build Skills for every time, create bla bla bla</p>
+                <!-- <div class="buttongroup">
+                     <div class="button">
+                        <img src="../assets/images/Google.png" alt="">
+                        <p class="textdesc">Sign up with google</p>
+                    </div>
+                    <div class="button">
+                        <img src="../assets/images/Facebook.png" alt="" id="facebook">
+                        <p class="textdesc">Sign up with facebook</p>
+                    </div>
+                </div> -->
+                <div class="form">
+                    <div class="names">
+                        <input type="text" placeholder="First Name" id="signEmail">
+                    <input type="text" placeholder="Second Name" id="secondName">
+                    </div>
+                    <input type="text" placeholder="Address" id="address">
+                    <input type="text" placeholder="Email" id="address">
+                    <p>By clicking this button, you agree with primecs policy</p>
+                    <button onclick="FlipTab(2)">Next</button>
+                </div> 
+            </div>
+            <div class="tab" id="ceateacc2" >
+                <h2>A few steps to go</h2>
+                <div class="form">
+                    <input type="text" placeholder="High School" id="address">
+                    <input type="text" placeholder="University" id="address">
+                    <input type="text" placeholder="Email" id="address">
+                    <p>By clicking this button, you agree with primecs policy</p>
+                    <button onclick="FlipTab(3)">Next</button>
+                    <button onclick="FlipTab(1)">Back</button>
+                </div> 
+            </div>
+            <div class="tab" id="ceateacc3">
+                <h2>You are almost done</h2>
+                <div class="form">
+                    <select name="cars" id="cars">
+                        <option value="volvo">Employed</option>
+                        <option value="saab">Unemployed</option>
+                      </select>
+                    <input type="text" placeholder="Company name" id="address">
+                    <input type="text" placeholder="Supervisors address" id="address">
+                    <p>By clicking this button, you agree with primecs policy</p>
+                </div> 
+                <div class="attachements">
+                    <h1>Attachments</h1>
+                    <div class="realfiles">
+                        <input type="file" accept="image/png, image/jpeg" id="cv" hidden>
+                    <label for="cv" id="cvlabel">CV</label>
+                    <input type="file" accept="image/png, image/jpeg" id="apletter" hidden>
+                    <label for="cv" id="apleterlabel">Application Letter</label>
+                    <input type="file" accept="image/png, image/jpeg" id="paymentrec" hidden>
+                    <label for="cv" id="paymentLabel">Payment Receipt</label>
+                    </div>
+                </div>
+                <button onclick="" id="finish">Finish</button>
+                <button onclick="FlipTab(2)">Back</button>
+
+            
+            </div>
+             
+        </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+        <script src="../js/createAccount.js"></script>
+</body>
+</html>
