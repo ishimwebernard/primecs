@@ -121,7 +121,7 @@
             firebase.auth().createUserWithEmailAndPassword(String(email.value), String(firstPassword.value))
             .then((user) => {
                 console.log(`Starting creation of a document`);
-               return db.collection('users').doc(user.user.uid).set({
+                db.collection('users').doc(user.user.uid).set({
                    firstName: String(firstName.value),
                    secondName: String(secondName.value),
                    courses: ""

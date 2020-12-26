@@ -432,8 +432,8 @@
         }
         function populateUserImages(){
             firebase.storage().ref().child(String(userId)).getDownloadURL().then((url)=>{
-                document.getElementById("userprofilepicture").style.backgroundImage = `url(${url})`;
-                document.getElementById("userProfile").style.backgroundImage = `url(${url})`;
+                document.getElementById("userprofilepicture").style.backgroundImage = `url(${url});`;
+                document.getElementById("userProfile").style.backgroundImage = `url(${url});`;
             }).catch(error=>{
 
             })
