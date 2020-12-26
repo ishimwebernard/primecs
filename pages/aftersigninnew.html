@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/aftersigninnew.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap" rel="stylesheet"> 
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="row1">
+            <div class="logoholder">
+                <img src="../assets/images/logolearning.png" alt="">
+            </div>
+           
+                <div class="navigationItemsHolder">
+                    <div class="trueContainer">
+                  
+                        <div class="navigatorItem">
+                            <img src="../assets/images/home.png" alt="">
+                            <p class="navigationText">DASHBOARD</p>
+                        </div>
+                        <div class="navigatorItem">
+                            <img src="../assets/images/help.png" alt="">
+                            <p class="navigationText">SUPPORT</p>
+                        </div>
+                        <div class="navigatorItem">
+                            <img src="../assets/images/account.png" alt="">
+                            <p class="navigationText">MY ACCOUNT</p>
+                        </div>
+                        <div class="navigatorItem">
+                            <img src="../assets/images/out.png" alt="">
+                            <p class="navigationText">SIGN OUT</p>
+                        </div>
+                    </div>
+                </div>
+           
+        </div>
+        <div class="row2">
+           <div class="tab" id="profile">
+            <h2>My Profile</h2>
+            <div class="profilenavigator">
+                <div class="leftnav">
+                    <div class="navitem" onclick="switchNav(0)">
+                        <img src="../assets/images/person_simple.png" alt="">
+                        <p>User Information</p>
+                    </div>
+                    <div class="navitem" onclick="switchNav(1)">
+                        <img src="../assets/images/contact_info.png" alt="">
+                        <p>Contact information</p>
+                    </div>
+                    <div class="navitem" onclick="switchNav(2)">
+                        <img src="../assets/images/course_info.png" alt="">
+                        <p>Course/ Products</p>
+                    </div>
+                    <div class="navitem" onclick="switchNav(3)">
+                        <img src="../assets/images/payment_info.png" alt="">
+                        <p>Payment Information</p>
+                    </div>
+                </div>
+                <div class="mainnav" id="userInformation">
+                    <div class="profile"></div>
+                    <div class="set">
+                        <p class="identifier">Name</p>
+                        <p class="value">Murara</p>
+                    </div>
+                    <div class="set">
+                        <p class="identifier">Email ID</p>
+                        <p class="value">Murara@mapl.com</p>
+                    </div>
+                    <button>Upload Profile Photo</button>
+                </div>
+                <div class="mainnav" id="contactInformation">
+                   <section class="cinfo">
+                        <h2>Mailing Address</h2>
+                        <div class="InputPair">
+                            <input type="text" placeholder="Addess Line 1">
+                            <input type="text" placeholder="Addess Line 1">
+                        </div>
+                        <div class="InputPair">
+                            <input type="text" placeholder="Addess Line 1">
+                            <input type="text" placeholder="Addess Line 1">
+                        </div>
+                        <div class="InputPair">
+                            <input type="text" placeholder="Addess Line 1">
+                            <input type="text" placeholder="Addess Line 1">
+                        </div>
+
+                   </section>
+                   <section>
+                       <h2>Education</h2>
+                       <div class="InputPair">
+                        <input type="text" placeholder="Addess Line 1">
+                        <input type="text" placeholder="Addess Line 1">
+                    </div>
+                   </section>
+                   <section>
+                       <h2>Employment</h2>
+                       <div class="InputPair">
+                        <input type="text" placeholder="Employment Company">
+                        <input type="text" placeholder="Supervisors Address">
+                    </div>
+                   </section>
+                </div>
+                <div class="mainnav" id="courseInformation">
+                    <h2>Fall 2013 and Ever</h2>
+                   <div class="superSet">
+                    <div class="set">
+                        <p class="identifier">Total Course Fee</p>
+                        <p class="value">$1212</p>
+                    </div>
+                    <div class="set">
+                        <p class="identifier">Depth Subject</p>
+                        <select name="" id="">
+                            <option value="">Math</option>
+                            <option value="">Physics</option>
+                            <option value="">Compt</option>
+                        </select>
+                    </div>
+                   </div>
+                </div>
+                <div class="mainnav">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Receipt</th>
+                        </tr>
+                        <tr>
+                            <td>Slip</td>
+                            <td>$5000</td>
+                            <td>Processed</td>
+                            <td>Click Here</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+    <script src="../js/aftersignin.js"></script>
+</body>
+</html>

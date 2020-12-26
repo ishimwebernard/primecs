@@ -89,6 +89,19 @@
     margin-top: 17.5%;
     text-align: center;
 }
+#finish{
+    text-align: center;
+    background: #fff;
+    color: #2741bc;
+    padding: .4rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 77%;
+    margin-top: 1rem;
+
+
+
+}
 
 .content .row1 .rightitems .buttongroup{
     display: flex;
@@ -274,9 +287,11 @@
 
 /**/
 
-.realcontainer #signin{
+.realcontainer .tab{
     text-align: center;
     margin-top: 10rem;
+    animation-name: LeftToRight;
+    animation-duration: 1s;
 }
 .realcontainer #signin .buttongroup{
     display: flex;
@@ -284,21 +299,39 @@
     margin-left: auto;
     margin-right: auto;
 }
-.realcontainer #signin .form{
+.realcontainer .tab .form{
     display: flex;
     flex-direction: column;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
+.realcontainer #signin .form .names{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.realcontainer #signin .form .names #secondName{
+    margin-left: .5rem;
+}
+.realcontainer .tab .form{
+    display: flex;
+    flex-direction: column;
+}
+.realcontainer .tab .form input{
+    padding: .25rem;
+    margin-top: .5rem;
+}
+
+
 .realcontainer #signin .form input{
     margin-top: .5rem;
     padding: .25rem;
 }
-.realcontainer #signin .form button{
+.realcontainer .tab .form button{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1rem;
 }
 .realcontainer #signin .form p{
     margin-top: 1rem;
@@ -308,6 +341,57 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.tab .attachements{
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-self: center;
+    margin-left: 15%;
+}
+.tab .attachements .realfiles{
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;}
+    .tab .attachements .realfiles label{
+        color: #fff;
+        background-color: #233AA9;
+        margin-left: 5px;
+        text-align: center;
+        font-weight: 700;
+        padding: 5px;
+        
+        
+    }
+
+#cvlabel{
+    background-color: rgb(128, 30, 30);
+}
+#apleterlabel{
+    background-color: rgb(30, 116, 73);
+}
+#paymentLabel{
+    background-color: rgb(128, 30, 30);
+
+}
+#ceateacc2{
+    display: none;
+    animation-name: LeftToRight;
+    animation-duration: 1s;
+}
+#ceateacc3{
+    display: none;
+    animation-name: LeftToRight;
+    animation-duration: 1s;
+}
+@keyframes LeftToRight{
+    from{y:"-100%";}
+    to{y:"0%"}
+}
+
+
+
 
 
 

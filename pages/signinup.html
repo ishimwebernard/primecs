@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/signinup.css">
+    <link rel="stylesheet" href="../css/createaccount.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="../js/signinup.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap" rel="stylesheet"> 
@@ -53,34 +53,9 @@
             </div>
         </div>
         <div class="r">>
-        <div class="pagenavigator">
-            <div class="lander" id="tup" onclick="switchTabTo(`signup`, this)"><p>SIGN UP</p></div>
-            <div class="lander" id="tin" onclick="switchTabTo(`signin`, this)"><p>SIGN IN</p></div>
-        </div>
+
         <div class="realcontainer">
-            <div id="signup" class="tab">
-                <h2>Create your account</h2>
-                <p>Build Skills for every time, create bla bla bla</p>
-                <div class="buttongroup">
-                    <div class="button">
-                        <img src="../assets/images/Google.png" alt="">
-                        <p class="textdesc">Sign up with google</p>
-                    </div>
-                    <div class="button">
-                        <img src="../assets/images/Facebook.png" alt="" id="facebook">
-                        <p class="textdesc">Sign up with facebook</p>
-                    </div>
-                </div>
-                <div class="form">
-                    <input type="text" placeholder="First Name" id="firstName">
-                    <input type="text" placeholder="Second Name" id="secondName">
-                    <input type="text" placeholder="Email address" id="email">
-                    <input type="text" placeholder="Password" id="passwordOne">
-                    <input type="text" placeholder="Repeat Password" id="passwordTwo">
-                    <p class="policy">By clicking this button, you agree with primecs policy</p>
-                    <button onclick="signUp()">SIGN UP</button>
-                </div>
-            </div>
+        
             <div id="signin" class="tab">
                 <h2>Sign into your account</h2>
                 <p>Build Skills for every time, create bla bla bla</p>
@@ -97,7 +72,10 @@
                 <div class="form">
                     <input type="text" placeholder="Email address" id="signEmail">
                     <input type="password" placeholder="Password" id="signPassword">
+
                     <p>By clicking this button, you agree with primecs policy</p>
+                    <p>Don't have account,</p>
+                    <a href="../pages/createaccount.html">Create account</a>
                     <button onclick="login()">SIGN IN</button>
                 </div>
             </div>
@@ -143,7 +121,7 @@
             firebase.auth().createUserWithEmailAndPassword(String(email.value), String(firstPassword.value))
             .then((user) => {
                 console.log(`Starting creation of a document`);
-               return db.collection('users').doc(user.user.uid).set({
+                db.collection('users').doc(user.user.uid).set({
                    firstName: String(firstName.value),
                    secondName: String(secondName.value),
                    courses: ""
